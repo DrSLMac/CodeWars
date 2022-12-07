@@ -1,8 +1,13 @@
-const assert = require('chai').assert;
-describe("Tests", () => {
-  it("test", () => {
-    assert.deepEqual(filter_list([1,2,'a','b']),[1,2], 'For input [1,2,"a","b"]');
-    assert.deepEqual(filter_list([1,'a','b',0,15]),[1,0,15], 'For input [1,"a","b",0,15]');
-    assert.deepEqual(filter_list([1,2,'aasf','1','123',123]),[1,2,123], 'For input [1,2,"aasf","1","123",123]');
+describe("findNextSquare", function() {
+  it("should return the next square for perfect squares", function() {
+    Test.assertEquals(findNextSquare(121), 144, "Wrong output for 121");
+    Test.assertEquals(findNextSquare(625), 676, "Wrong output for 625");
+    Test.assertEquals(findNextSquare(319225), 320356, "Wrong output for 319225");
+    Test.assertEquals(findNextSquare(15241383936), 15241630849, "Wrong output for 15241383936");
+  });
+  
+  it("should return -1 for numbers which aren't perfect squares", function() {
+    Test.assertEquals(findNextSquare(155), -1, "Wrong output for 155");
+    Test.assertEquals(findNextSquare(342786627), -1, "Wrong output for 342786627");
   });
 });

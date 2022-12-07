@@ -13,6 +13,6 @@ function filter_list(list) {
   console.log("filter_list([1,'a','b',0,15]): ", filter_list([1,'a','b',0,15]))
   console.log("filter_list([1,2,'aasf','1','123',123]): ", filter_list([1,2,'aasf','1','123',123]))
 
-  function filter_lists(l) {
-    return l.filter(v => typeof v == "number")
-   }
+//   function filter_lists(l) {
+//     return l.filter(v => typeof v == "number")
+//    }
