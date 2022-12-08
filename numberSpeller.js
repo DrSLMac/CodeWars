@@ -36,16 +36,13 @@ console.log("2. numberSpeller([]): ", numberSpeller([]))
 
 
 
-
-
-
-
-
 const othernumberSpeller = (numArr) => {
     const numWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     let finalString = ''
     let toggle = true;
+
     numArr.forEach((item) => {
+
         if (toggle) {
             // console.log("does it toggle?: ", toggle)
             finalString += ' ' + numWords[item].toUpperCase()
@@ -62,7 +59,7 @@ const othernumberSpeller = (numArr) => {
    }
 }
 
-// console.log("1. numberSpeller([4,7,3]): ", numberSpeller([4,7,3]))
+console.log("1. numberSpeller([4,7,3]): ", numberSpeller([4,7,3]))
 // console.log("2. numberSpeller([6,5,5,7,2,0,7]): ", numberSpeller([6,5,5,7,2,0,7]))
 // console.log("3. numberSpeller([4,7,3]): ", numberSpeller([0]))
 // console.log("4. numberSpeller([4,7,3]): ", numberSpeller([]))
