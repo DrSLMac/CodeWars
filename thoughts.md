@@ -1,6 +1,8 @@
 describe("Tests", () => {
   it("test", () => {
-Test.assertEquals(booleanToString(true), "true", 'When we pass in true, we want the string "true" as output');
-Test.assertEquals(booleanToString(false), "false", 'When we pass in false, we want the string "false" as output');
+Test.assertEquals(digPow(89, 1), 1)
+Test.assertEquals(digPow(92, 1), -1)
+Test.assertEquals(digPow(46288, 3), 51)
+
   });
 });
