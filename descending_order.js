@@ -8,10 +8,9 @@
 // Input: 123456789 Output: 987654321
 
 function descendingOrder(nums){
-    const sorter = (a,b) => {
-        return b - a
-    }
-    const sortNums = nums.toString().split('').sort(sorter).join('')
+    // const sorter = (a,b) => b - a
+ 
+    const sortNums = nums.toString().split('').sort((a,b) => b - a).join('')
     const makeNum = parseInt(sortNums)
     return makeNum
   }

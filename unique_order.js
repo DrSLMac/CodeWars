@@ -8,7 +8,7 @@
 
 var uniqueInOrder=function(iterable){
     const numStr = () => typeof iterable !== "object" ? iterable.split('') : iterable
-    const groupThem = numStr().reduce((finalArr, item, idx) => {
+    const groupThem = numStr().reduce((finalArr, item) => {
         if (finalArr.length === 0) {
             finalArr.push(item)
         }
