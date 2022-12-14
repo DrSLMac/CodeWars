@@ -1,7 +1,7 @@
-describe("Tests", () => {
-  it("test", () => {
-    let a1 = [121, 144, 19, 161, 19, 144, 19, 11];
-    let a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
-    assert.isTrue(comp(a1, a2));
+describe("Sample Tests", () => {
+  it("should pass some sample tests", () => {
+    assert.deepEqual(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
+    assert.deepEqual(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
+    assert.deepEqual(sortArray([]),[]);
   });
 });
