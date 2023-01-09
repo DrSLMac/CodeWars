@@ -12,13 +12,11 @@
 
 // Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function.
 
-const narcissistic = (value) => {
-  const strArr = value.toString().split('')
-  let product = 0
-  for (let i = 0; i < strArr.length; i++ ) {
-    product += Math.pow(strArr[i], strArr.length)
-  }
-  return product === value ? true : false
+function narcissistic(value) {
+  const reduceIt = value.toString().split('').reduce((acc, num) => {
+    return acc += Math.pow(num, value.toString().length)
+  }, 0)
+  return reduceIt === value ? true : false
 }
 
 
@@ -29,12 +27,23 @@ console.log("narcissistic(1652): ", narcissistic(1652))
 console.log("narcissistic(371): ", narcissistic(371))
 
 
-// const narcissistic = (value) => {
-//     let expression = 0
-//     const strNum = value.toString().split('')
-//     strNum.forEach(num => expression += (num**strNum.length))
-//       if (expression === value) {
-//           return true
-//       } else return false
-//     }
 
+
+// const narcissistic = (value) => {
+  //     let expression = 0
+  //     const strNum = value.toString().split('')
+  //     strNum.forEach(num => expression += (num**strNum.length))
+  //       if (expression === value) {
+    //           return true
+    //       } else return false
+    //     }
+    
+    
+    // const narcissistic = (value) => {
+    //   const strArr = value.toString().split('')
+    //   let product = 0
+    //   for (let i = 0; i < strArr.length; i++ ) {
+    //     product += Math.pow(strArr[i], strArr.length)
+    //   }
+    //   return product === value ? true : false
+    // }

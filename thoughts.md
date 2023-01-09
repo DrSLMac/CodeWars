@@ -1,11 +1,14 @@
-describe("Add two numbers", function(){
-  it("should pass basic tests", function() {
-    Test.assertEquals(add("1", "1"), "2");
-    Test.assertEquals(add("123", "456"), "579");
-    Test.assertEquals(add("888", "222"), "1110");
-    Test.assertEquals(add("1372", "69"), "1441");
-    Test.assertEquals(add("12", "456"), "468");
-    Test.assertEquals(add("101", "100"), "201");
-    Test.assertEquals(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
-  });
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(generateHashtag(""), false, "Expected an empty string to return false")
+Test.assertEquals(generateHashtag(" ".repeat(200)), false, "Still an empty string")
+Test.assertEquals(generateHashtag("Do We have A Hashtag"), "#DoWeHaveAHashtag", "Expected a Hashtag (#) at the beginning.")
+Test.assertEquals(generateHashtag("Codewars"), "#Codewars", "Should handle a single word.")
+Test.assertEquals(generateHashtag("Codewars Is Nice"), "#CodewarsIsNice", "Should remove spaces.")
+Test.assertEquals(generateHashtag("Codewars is nice"), "#CodewarsIsNice", "Should capitalize first letters of words.")
+Test.assertEquals(generateHashtag("code" + " ".repeat(140) + "wars"), "#CodeWars")
+Test.assertEquals(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"), false, "Should return false if the final word is longer than 140 chars.")
+Test.assertEquals(generateHashtag("a".repeat(139)), "#A" + "a".repeat(138), "Should work")
+Test.assertEquals(generateHashtag("a".repeat(140)), false, "Too long")
+});
 });
