@@ -12,21 +12,33 @@
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
 
-const generateHashtag = (str) => {
+const generateHashtags = (str) => {
  if (str.length === 0 || str.length > 140 ) {
     return false 
  } else {
      const capCase = str.split(' ').reduce((newArray, word) => {
-         newArray.push(word.charAt(0).toUpperCase() + word.slice(1))
+         newArray.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
          return newArray
-     }, [])
-     return "#" + capCase.join('')
+     }, []).join('')
+     console.log ("capCase: ", capCase)
+    //  return "#" + capCase.join('')
  }
 }
 
-console.log("generateHashtag(''): ", generateHashtag(""))//false
-console.log("generateHashtag('Do We have A Hashtag'): ", generateHashtag('Do We have A Hashtag'))
-console.log("generateHashtag('Codewars'): ", generateHashtag('Codewars'))
-console.log("generateHashtag('Codewars Is Nice'): ", generateHashtag('Codewars Is Nice'))
-console.log("generateHashtag('Codewars is nice'): ", generateHashtag('Codewars is nice'))
+console.log("generateHashtags('CodeWars is nice'): ", generateHashtags('CodeWars is nice'))
+
+const generateHashtag = (str) => {
+    let makeIt = str.split(' ').map(item => {
+        return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
+    }).join('')
+    let madeIt = makeIt.length <1 || !makeIt ?  false : `#${makeIt}`
+    console.log("madeIt: ", madeIt)
+    return makeIt > 140 ? false : makeIt
+}
+
+// console.log("generateHashtag(''): ", generateHashtag(""))//false
+// console.log("generateHashtag('Do We have A Hashtag'): ", generateHashtag('Do We have A Hashtag'))
+// console.log("generateHashtag('Codewars'): ", generateHashtag('Codewars'))
+// console.log("generateHashtag('Codewars Is Nice'): ", generateHashtag('Codewars Is Nice'))
+console.log("generateHashtag('CodeWars is nice'): ", generateHashtag('CodeWars is nice'))
 // console.log("generateHashtag(): ", generateHashtag())
