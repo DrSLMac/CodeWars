@@ -12,21 +12,33 @@
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
 
-const generateHashtag = (str) => {
- if (str.length === 0 || str.length > 140 ) {
-    return false 
- } else {
-     const capCase = str.split(' ').reduce((newArray, word) => {
-         newArray.push(word.charAt(0).toUpperCase() + word.slice(1))
-         return newArray
-     }, [])
-     return "#" + capCase.join('')
- }
-}
+// const generateHashtag = (str) => {
+//  if (str.length === 0 || str.length > 140 ) {
+//     return false 
+//  } else {
+//      const capCase = str.split(' ').reduce((newArray, word) => {
+//          newArray.push(word.charAt(0).toUpperCase() + word.slice(1))
+//          return newArray
+//      }, [])
+//      return "#" + capCase.join('')
+//  }
+// }
 
-console.log("generateHashtag(''): ", generateHashtag(""))//false
-console.log("generateHashtag('Do We have A Hashtag'): ", generateHashtag('Do We have A Hashtag'))
-console.log("generateHashtag('Codewars'): ", generateHashtag('Codewars'))
-console.log("generateHashtag('Codewars Is Nice'): ", generateHashtag('Codewars Is Nice'))
-console.log("generateHashtag('Codewars is nice'): ", generateHashtag('Codewars is nice'))
+// console.log("generateHashtag(''): ", generateHashtag(""))//false
+// console.log("generateHashtag('Do We have A Hashtag'): ", generateHashtag('Do We have A Hashtag'))
+// console.log("generateHashtag('Codewars'): ", generateHashtag('Codewars'))
+// console.log("generateHashtag('Codewars Is Nice'): ", generateHashtag('Codewars Is Nice'))
+// console.log("generateHashtag('Codewars is nice'): ", generateHashtag('Codewars is nice'))
 // console.log("generateHashtag(): ", generateHashtag())
+
+// console.log(0.1 + 0.2)
+// console.log(0.1 + 0.2 == 0.3)
+
+for (let i = 0; i <= 1; i++) {
+    let x = 1;  //variables declared with let are only block scoped
+    console.log(x);
+  }
+//   console.log(x);
+
+let x = 0.1 + .2
+console.log(x.toFixed(1) == 0.3)
