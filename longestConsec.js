@@ -23,41 +23,41 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
-const longestConsec = (strArr, num) =>{
-const arrLen = strArr.length
+// const longestConsec = (strArr, num) =>{
+// const arrLen = strArr.length
 
-if (arrLen === 0 || num > arrLen || num <= 0) {
-    return ""
-}
-
-const numConsecStr = arrLen - num
-console.log("arrLen: ", arrLen)
-console.log("numConsecStr: ", numConsecStr)
-const resultArr = []
-let consecStr
-    for (let i = 0; i <= numConsecStr; i++) {
-        consecStr = ''
-        for (let s = i; s < i + num; s++) {
-            consecStr += strArr[s]
-        }
-        resultArr.push(consecStr)
-    }
-    // return resultArr
+// if (arrLen === 0 || num > arrLen || num <= 0) {
+//     return ""
 // }
-// console.log("getConsecStr: ", getConsecStr())
-console.log("resultArr: ", resultArr )
-const longestStr = resultArr.reduce((final, item) => {
-    // console.log("item: ", item.length)
-    // console.log("final: ", final.length)
-    if (final.length >= item.length) {
-        return final
-    } else {
-        final = item
-    }
-    return final
-})
-return longestStr
-}
+
+// const numConsecStr = arrLen - num
+// console.log("arrLen: ", arrLen)
+// console.log("numConsecStr: ", numConsecStr)
+// const resultArr = []
+// let consecStr
+//     for (let i = 0; i <= numConsecStr; i++) {
+//         consecStr = ''
+//         for (let s = i; s < i + num; s++) {
+//             consecStr += strArr[s]
+//         }
+//         resultArr.push(consecStr)
+//     }
+//     // return resultArr
+// // }
+// // console.log("getConsecStr: ", getConsecStr())
+// console.log("resultArr: ", resultArr )
+// const longestStr = resultArr.reduce((final, item) => {
+//     // console.log("item: ", item.length)
+//     // console.log("final: ", final.length)
+//     if (final.length >= item.length) {
+//         return final
+//     } else {
+//         final = item
+//     }
+//     return final
+// })
+// return longestStr
+// }
 // You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
 
 // Examples:
@@ -89,17 +89,26 @@ const longestConsec = (strArray, numWord) => {
             return ""
         }
     const result = [];
-    let lastConsecStr = numWord > 1 ? arrLength - numWord : arrLength
+    let lastConsecStr = numWord >= 1 ? arrLength - numWord : arrLength
     for (let i = 0; i <= lastConsecStr; i++) {
+        // console.log("first i: ", i)
         let consecWords = ''
-        for (let s = i; s < i + numWord; s++) {
+        for (let s = i; s < i + numWord; s++) { //numWord = 2
+            // console.log("s: ", s)
+            // console.log("i: ", i)
             consecWords += strArray[s]
         }
     result.push(consecWords)
     }
+    console.log("result: ", result)
     const longestConsecString = result.reduce((finalStr, item) => {
+
         item.length > finalStr.length ? finalStr = item : finalStr
+
         return finalStr
     })
     return longestConsecString
 }
+
+// console.log(longestConsec(["hello", "trash", "something", "somethingelse", "friday", "computer", "sick", "done"], 3))
+console.log("longestConsec()", longestConsec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2))
