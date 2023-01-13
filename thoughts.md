@@ -1,3 +1,4 @@
+
 describe("longestConsec",function() {
   it("Basic tests",function() { 
       assert.strictEqual(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2), "abigailtheta")
@@ -11,3 +12,4 @@ describe("longestConsec",function() {
       assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0), "")
   })
 })
+
