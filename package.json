@@ -1,0 +1,20 @@
+{
+    "name": "CodeWars",
+    "version": "1.0.0",
+    "description": "Practice Codewars Katas",
+    "main": "kataTest.js",
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha test/ --reporter dot --require mocha-clean",
+        "testPrototypes": "./node_modules/mocha/bin/mocha test/prototype-test.js --reporter dot --require mocha-clean",
+        "testScope": "./node_modules/mocha/bin/mocha test/scope-test.js --reporter dot --require mocha-clean"
+    },
+    "keywords": [
+        "js"
+    ],
+    "devDependencies": {
+        "chai": "^4.3.7",
+        "mocha": "^8.4.0",
+        "mocha-clean": "^1.0.0",
+        "request": "^2.88.2"
+    }
+}
