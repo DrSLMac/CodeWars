@@ -83,6 +83,58 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
+// const longestConsec = (strArray, numWord) => {
+//     const arrLength = strArray.length
+//     if (arrLength === 0 || numWord > arrLength || arrLength <= 0) {
+//             return ""
+//         }
+//     const result = [];
+//     let lastConsecStr = numWord > 1 ? arrLength - numWord : arrLength
+//     for (let i = 0; i <= lastConsecStr; i++) {
+//         let consecWords = ''
+//         for (let s = i; s < i + numWord; s++) {
+//             consecWords += strArray[s]
+//         }
+//     result.push(consecWords)
+//     }
+//     const longestConsecString = result.reduce((finalStr, item) => {
+//         item.length > finalStr.length ? finalStr = item : finalStr
+//         return finalStr
+//     })
+//     return longestConsecString
+// }
+
+
+
+const mySet = new Set()
+mySet.add(1)
+mySet.add(1)
+mySet.add('a')
+mySet.add('a')
+mySet.add(undefined)
+mySet.add(undefined)
+mySet.add({prop: true})
+mySet.add({prop: true})
+console.log('Size: ', mySet.size)
+
+const myArray = new Array(2)
+myArray[1] = 1
+myArray[3] = 3
+console.log('Length: ', myArray.length)
+console.log('Elements: ')
+for (const element of myArray) {
+    console.log('\t', element)
+}
+
+function* gen1() {
+    console.log(yield 1)
+    console.log(yield 2)
+    console.log(yield 3)
+}
+const iterator = gen1()
+console.log(iterator.next('a').value)
+console.log(iterator.next('b').value)
+console.log(iterator.next('c').value)
 const longestConsec = (strArray, numWord) => {
     const arrLength = strArray.length
     if (arrLength === 0 || numWord > arrLength || arrLength <= 0) {
