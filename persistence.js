@@ -8,29 +8,26 @@
 
 
 const persistence = (num) => {
-    const strNum = num.toString().split('')
-    const multStr = strNum.reduce((count, num) => {
-        //create a helper function to perform multiplication of all elements in array
-        const multNums = () => {
-            let sumMults = 1;
-            for (var i = 0; i < strNum.length; i++) {
-                sumMults = sumMults * strNum[i]
-            }
-            return sumMults.toString().split('')
+    let counter = 0
+
+    let strNum = num.toString().split('');
+
+    while (strNum.length > 1) {
+        let results = 1;
+
+        for (let i = 0; i < strNum.length; i++) {
+            results = results * strNum[i]
         }
-        if (multNums().length === 1) {
-            return 0;
-        } else {
-        if (multNums().length > 1) 
-            count ++
-            multNums()
-        }
-        return count
-    }, 1)
-    return multStr
+    
+        strNum = results.toString().split('')
+        counter += 1
+    }
+
+    return counter
 }
 
 console.log("persistence(39): ", persistence(39)) // 3
 console.log("persistence(4): ", persistence(4)) // 0
 console.log("persistence(25): ", persistence(25)) // 2
+console.log("persistence(10): ", persistence(10)) // 1
 console.log("persistence(999): ", persistence(999)) // 4
