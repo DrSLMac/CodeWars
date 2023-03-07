@@ -26,7 +26,9 @@
 //01/26/23
 const duplicateCount = (text) => {
   let letterObj = text.toLowerCase().split('').reduce((obj, alphaNum) => {
+
     obj[alphaNum] ? obj[alphaNum] += 1 : obj[alphaNum] = 1;
+    
     return obj
   }, {})
   return Object.keys(letterObj).filter(key => letterObj[key] > 1).length
